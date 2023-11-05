@@ -36,7 +36,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: const Text('Early Suraksha',
+        title: const Text('EARLY SURAKSHA',
         style: TextStyle(
           fontSize: 28
         ),),
@@ -50,7 +50,7 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
                 Container(
                   height: MediaQuery.of(context).size.height*0.3,
-                  child: Image.network('https://firebasestorage.googleapis.com/v0/b/flutter-chat-ec3a8.appspot.com/o/user_image%2Flocation.png?alt=media&token=5f46f2d9-b6ce-40d0-94fd-397476142a6a')
+                  child: Image.network('https://firebasestorage.googleapis.com/v0/b/flutter-chat-ec3a8.appspot.com/o/user_image%2FRectangle%2013.png?alt=media&token=2237fce3-0060-4cf6-abf0-91f8119bf0c1')
                   ),
                 const SizedBox(height: 50,),
                 Container(
@@ -59,13 +59,13 @@ class _LoginScreenState extends State<LoginScreen> {
                   
                   decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(5),
-                    color: Colors.grey
+                    color: Colors.yellow.shade600
                   ),
                   child: Padding(
                     padding: const EdgeInsets.only(left: 10),
                     child: TextField(
                       controller: _usernameController,
-                      decoration: const InputDecoration(labelText: 'Username'),
+                      decoration: const InputDecoration(labelText: 'USERNAME'),
                     ),
                   ),
                 ),
@@ -75,14 +75,14 @@ class _LoginScreenState extends State<LoginScreen> {
                   width: MediaQuery.of(context).size.width*0.9,
                   decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(5),
-                    color: Colors.grey
+                    color: Colors.yellow.shade600
                   ),
                   child: Padding(
                     padding: const EdgeInsets.only(left: 10),
                     child: TextField(
                       controller: _passwordController,
                       obscureText: true,
-                      decoration: const InputDecoration(labelText: 'Password'),
+                      decoration: const InputDecoration(labelText: 'PASSWORD'),
                     ),
                   ),
                 ),
@@ -96,7 +96,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: ElevatedButton(
                     onPressed: _loginUser
                     ,
-                    child: const Text('Login'),
+                    child: const Text('LOGIN',
+                    style: TextStyle(fontSize: 24),),
                   ),
                 ),
               ],

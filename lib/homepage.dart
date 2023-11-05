@@ -1,3 +1,4 @@
+import 'package:early_suraksha/audio.dart';
 import 'package:early_suraksha/global.dart';
 import 'package:early_suraksha/map_screen.dart';
 import 'package:flutter/material.dart';
@@ -81,7 +82,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Home'),
+        title: const Text('EARLY SURAKSHA'),
       ),
       body: Stack(children: <Widget>[
         MapSample(pos),
@@ -102,36 +103,40 @@ class _HomePageState extends State<HomePage> {
                     ),
                     Container(
                       height: 40,
-                      width: MediaQuery.of(context).size.width * 0.8,
+                      width: MediaQuery.of(context).size.width * 0.9,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         color: Colors.blue,
                       ),
-                      child: const Row(
+                      child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: <Widget>[
-                          FaIcon(
+                          const FaIcon(
                             FontAwesomeIcons.warning,
                             size: 24,
                             color: Colors.yellow,
                           ),
                           Text(
-                            'Alert! Lightning',
-                            style: TextStyle(fontSize: 24, color: Colors.white),
-                          )
+                            'ALERT!',
+                            style: TextStyle(fontSize: 20, color: Colors.red.shade200,
+                            fontWeight: FontWeight.bold,),
+                          ),
+                          const Text('(Deadly Lightning Strokes)',
+                          style: TextStyle(fontSize: 17, color: Colors.white),)
                         ],
                       ),
                     ),
                     const SizedBox(
                       height: 30,
                     ),
-                    const Text(
+                     const Text(
                       "Location Coordinates",
                       style: TextStyle(fontSize: 28),
                     ),
                     Text(
-                      "Latitude=${pos?.latitude}; Longitude= ${pos?.longitude}",
-                      style: const TextStyle(fontSize: 16),
+                      "Latitude= ${pos?.latitude}; \nLongitude= ${pos?.longitude}",
+                      style:  TextStyle(fontSize: 16,
+                      color: Colors.green.shade900),
                     ),
                     const SizedBox(height: 20),
                     const Text(
@@ -155,7 +160,7 @@ class _HomePageState extends State<HomePage> {
                       },
                       child: const Text(
                         'Get Address',
-                        style: TextStyle(fontSize: 30),
+                        style: TextStyle(fontSize: 23),
                       ),
                     ),
                     ElevatedButton(
@@ -169,13 +174,10 @@ class _HomePageState extends State<HomePage> {
                       },
                       child: const Text(
                         'Update Location',
-                        style: TextStyle(fontSize: 30),
+                        style: TextStyle(fontSize: 23),
                       ),
                     ),
-                    TextButton(
-            onPressed: (){},
-            child: Text('Play Audio'),
-          ),
+                    AudioPlayerWidget()
                   ],
                 ),
               ),
